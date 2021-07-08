@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  client-service:
+    build: .
+    image: client-service
+    hostname: localhost
+    restart: always
+    ports:
+      - 8080:8080
+    healthcheck:
+      test: "exit 0"
