@@ -7,6 +7,12 @@ It is a Spring-Boot application written using CQRS pattern to separate command a
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
+**IMPORTANT**
+
+To start of build this application using JDK 1.8 as this is my current office workstation JDK. 
+
+Hence I did not want to mess it up right now as there are too many moving parts of old applications we maintain.
+
 ## Usage
 To build the application and generate the open api definition:
 ```
