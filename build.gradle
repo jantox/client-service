@@ -1,0 +1,51 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.4'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'com.github.johnrengelman.processes' version '0.5.0'
+	id 'org.springdoc.openapi-gradle-plugin' version '1.3.2'
+	id 'java'
+}
+
+group = 'au.com.vodafone'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+	implementation 'org.springdoc:springdoc-openapi-ui:1.4.6'
+
+	implementation 'org.modelmapper:modelmapper:2.3.7'
+	implementation 'io.swagger.parser.v3:swagger-parser:2.0.20'
+	implementation 'org.openapitools:jackson-databind-nullable:0.2.1'
+
+	runtimeOnly('com.h2database:h2')
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	// junit
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+	// lombok
+	compileOnly 'org.projectlombok:lombok:1.18.20'
+	annotationProcessor 'org.projectlombok:lombok:1.18.20'
+	testCompileOnly 'org.projectlombok:lombok:1.18.20'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+}
+
+test {
+	useJUnitPlatform()
+}
+
+openApi {
+	apiDocsUrl.set("http://localhost:8080/client-api")
+	outputDir.set(file("$buildDir/docs"))
+	outputFileName.set("swagger.json")
+	waitTimeInSeconds.set(10)
+}
