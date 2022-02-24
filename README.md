@@ -1,5 +1,5 @@
-# Client Service API Application
-Client Service Application to handle client related data.
+# Client-Service Sprint-Boot API Application
+## Client-Service Application to handle client related data.
 
 It is a Spring-Boot application written using CQRS pattern to separate command and query responsibility.
 
