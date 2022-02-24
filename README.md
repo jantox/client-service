@@ -53,22 +53,23 @@ If you have docker desktop, you can just click start on docker container name cl
 
 ### Non Functional Requirements
 
+These non-functional requirements will be needed in order for this to be production-ready
+
 1. Security 
-- provide a way to make this application secure. 
-- Probably pass tokens to be authenticated.
 - Add spring-security and access roles for endpoints.
-- API application should be behind an API gateway (apigee or axway).
-- Use spring-cloud for sensitive data eg. database credentials
+- API application should be behind an API gateway (AWS Gateway API or APIgee).
+- Use spring-cloud for sensitive data or AWS Secrets Manager eg. database credentials
 
 2. Maintainability 
-- Introduce versioning system as early as possible.
+- Introduce versioning system as early as possible
+- Versioning can be adding version in the url itself OR adding it as header
 
 3. Reliability 
 - Data integrity is not there, there is no check regarding if name or email is existing. 
 
 4. Scalability 
 - Introduce proper DB (either RDBMS or NoSQL depending on its usage)
-- Introduce proper caching mechanism either Redis, well just use redis.
+- Introduce proper caching mechanism eg. Redis
 
 5. Monitoring and Observability 
 - Add logging mechanism such as log4j or logback.
