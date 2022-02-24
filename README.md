@@ -9,9 +9,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 **IMPORTANT**
 
-To start of build this application using JDK 1.8 as this is my current office workstation JDK. 
-
-Hence I did not want to mess it up right now as there are too many moving parts of old applications we maintain.
+To start of build this application using JDK 1.8.
 
 ## Usage
 To build the application and generate the open api definition:
